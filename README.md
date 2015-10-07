@@ -16,6 +16,15 @@ TODO:
 # Idea 2
     Capture images from web camera and do something with them. :) Like figure out am I happy or not today.
 
+# Idea 3
+    Presence detection to light on/off the screen
+
+# Idea 4
+    Polygon face
+
+# Idea 5
+    3d model construction
+
 # Instaling OpenCV2 with Anaconda
 
 Not sure that `BUILD_opencv_java` option is necessary, but it's how it worked for me. Replace `<HOME>` with path where you have anaconda3 installed.
