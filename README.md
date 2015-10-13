@@ -1,6 +1,9 @@
 Unnamed project
 ----
 
+# TODO:
+- make data to train and test on(different camera positions and different lightning and diffiring poses
+
 # What is it?
 TODO:
 

@@ -1,11 +1,9 @@
 import cv2
 
-ratio = 2
+ratio = 3
 kernel_size = 3
 sz = 8
-thresh = 13
-em = cv2.imread('imgs/empty/img_0.png', cv2.IMREAD_GRAYSCALE)
-fl = cv2.imread('imgs/full/img_0.png', cv2.IMREAD_GRAYSCALE)
+thresh = 7
 
 def edges(img):
 	#dst = cv2.blur(img, (sz,sz))
@@ -13,20 +11,24 @@ def edges(img):
 	dst = cv2.Canny(dst, thresh, thresh*ratio, kernel_size)
 	return dst
 
-cap = cv2.VideoCapture(0)
-em = edges(em)
-fl = edges(fl)
+if __name__ == "__main__":
+	em = cv2.imread('imgs/empty/img_0.png', cv2.IMREAD_GRAYSCALE)
+	fl = cv2.imread('imgs/full/img_0.png', cv2.IMREAD_GRAYSCALE)
 
-while True:
-	#ret, fl = cap.read()
-	#fl = edges(fl)
+	cap = cv2.VideoCapture(0)
+	em = edges(em)
+	fl = edges(fl)
 
-	cv2.imshow("Win1", em)
-	cv2.imshow("Win2", fl)
-	key = cv2.waitKey(1) & 0xFF
-	if key == ord('q'):
-		break
+	while True:
+		#ret, fl = cap.read()
+		#fl = edges(fl)
 
-cap.release()
-cv2.destroyAllWindows()
+		cv2.imshow("Win1", em)
+		cv2.imshow("Win2", fl)
+		key = cv2.waitKey(1) & 0xFF
+		if key == ord('q'):
+			break
+		
+	cap.release()
+	cv2.destroyAllWindows()
 
